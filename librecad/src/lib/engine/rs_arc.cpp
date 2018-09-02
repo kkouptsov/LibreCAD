@@ -555,8 +555,10 @@ RS_Vector RS_Arc::getNearestOrthTan(const RS_Vector& coord,
                                 vp=sol[1];
                                 break;
                         }
+                        // fall-through
                 default:
                         vp=sol[0];
+                        break;
         }
         return getCenter()+vp;
 }
@@ -950,7 +952,7 @@ void RS_Arc::drawVisible(RS_Painter* painter, RS_GraphicView* view,
                   double& patternOffset) {
 
 	if (!( painter && view)) return;
-    //visible in grahic view
+    //visible in graphic view
     if(isVisibleInWindow(view)==false) return;
 
     RS_Vector cp=view->toGui(getCenter());
