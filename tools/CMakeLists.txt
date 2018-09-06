@@ -46,3 +46,7 @@ endif()
 target_include_directories(ttf2lff PRIVATE
         ${FREETYPE_INCLUDE_DIR}
 )
+
+target_link_libraries(ttf2lff PRIVATE
+        ${FREETYPE_LIBRARY_DIR}
+)
