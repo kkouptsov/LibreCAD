@@ -37,7 +37,6 @@
 #include "dl_creationinterface.h"
 #include "dl_writer_ascii.h"
 
-
 /**
  * Default constructor.
  */

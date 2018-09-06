@@ -339,6 +339,8 @@ public:
 
 	int getLibVersion(const char* str);
 
+	void test();
+
 	void CreateSen(DL_CreationInterface* creationInterface, CDataSen& DSen);
 	void CreateEnko(DL_CreationInterface* creationInterface, CDataEnko& DEnko);
 	void CreateTen(DL_CreationInterface* creationInterface, CDataTen& DTen);
@@ -346,6 +348,14 @@ public:
 	void CreateSolid(DL_CreationInterface* creationInterface, CDataSolid& DSolid);
 	void CreateSunpou(DL_CreationInterface* creationInterface, CDataSunpou& DSunpou);
 	void CreateBlock(DL_CreationInterface* creationInterface, CDataBlock& DBlock);
+
+	bool DL_Jww::readDxfGroups(FILE *fp, DL_CreationInterface* creationInterface, int* errorCounter);
+	bool in(std::stringstream & stream, DL_CreationInterface * creationInterface);
+	bool processDXFGroup(DL_CreationInterface * creationInterface, int groupCode, const char * groupValue);
+	bool getChoppedLine(char * s, unsigned int size, FILE * fp);
+	bool getChoppedLine(char * s, unsigned int size, std::stringstream & stream);
+	bool stripWhiteSpace(char ** s);
+	bool readDxfGroups(std::stringstream & stream, DL_CreationInterface * creationInterface, int * errorCounter);
 
 private:
     DL_Codes::version version;

@@ -414,6 +414,12 @@ inline ofstream& operator<< (ofstream& ofstr, const int& output)
     return ofstr;
 } 
 
+inline ofstream& operator<< (ofstream& ofstr, const double& output)
+{
+	ofstr.write((char*)&output, sizeof(int));
+	return ofstr;
+}
+
 inline ifstream& operator>> (ifstream& ifstr, int& input) 
 {
 	ifstr.read((char*)&input, sizeof(int));
