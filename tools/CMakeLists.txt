@@ -1,5 +1,5 @@
-project(ttf2lff)
 cmake_minimum_required(VERSION 3.2)
+project(ttf2lff)
 
 ################ FreeType ###############
 
