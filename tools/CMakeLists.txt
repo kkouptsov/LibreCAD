@@ -39,6 +39,10 @@ file(GLOB CURRENT_HEADER_FILES
 
 add_executable(ttf2lff "${CURRENT_SOURCE_FILES}" "${CURRENT_HEADER_FILES}")
 
+if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+        target_compile_definitions(ttf2lff PRIVATE __WIN32__)
+endif()
+
 target_include_directories(ttf2lff PRIVATE
         ${FREETYPE_INCLUDE_DIR}
 )
